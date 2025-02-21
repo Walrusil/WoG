@@ -15,7 +15,7 @@ while True:
     game = select_game()
     if game == 4:
         print(f"\nBye {name}. See you next time...")
-        exit(0)
+        exit(1) # The change in this "ConflictTest" branch will create a conflict with the master
     difficulty = select_difficulty()
     print("")
     games[game](difficulty)
