@@ -6,3 +6,6 @@
 
 # Ignore Python cache
 __pycache__/
+
+# Ignore score file
+Scores.txt

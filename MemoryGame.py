@@ -1,5 +1,6 @@
 import random
 import time
+from Utils import screen_cleaner
 
 
 class MemoryGame:
@@ -13,7 +14,7 @@ class MemoryGame:
         print("Remember the following numbers:")
         print(self.sequence)
         time.sleep(0.7)  # Display numbers for 0.7 seconds
-        print("\033[H\033[J")  # Clear the console
+        screen_cleaner()  # Clear the console
 
     def get_list_from_user(self):
         """Prompts the user for a list of numbers."""
