@@ -51,6 +51,7 @@ class ScoreServer:
         self.thread.join()  # CHECK WHY THE SERVER DOES NOT STOP!!!
         exit(0)
 
+
 if __name__ == '__main__':
     score_server = ScoreServer()  # Create a ScoreServer instance
 
