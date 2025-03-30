@@ -1,0 +1,10 @@
+services:
+  wog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8777:5000"
+    volumes:
+      - ./Scores.txt:/app/Scores.txt
+    image: liransilver/wog:latest
