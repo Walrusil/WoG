@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'docker-compose build'
+                    bat 'docker-compose build --no-cache'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat 'echo python tests/e2e.py'
+                        bat 'python tests/e2e.py'
                     } catch (Exception err) {
                         error "Tests failed: ${err}"
                     }
