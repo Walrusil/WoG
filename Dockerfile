@@ -8,14 +8,16 @@ RUN apt-get update \
     && apt-get install -y ./google-chrome-stable_current_amd64.deb \
     && rm google-chrome-stable_current_amd64.deb \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && echo 0 > /app/Scores.txt
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
 
 # Copy all application files (including requirements.txt)
 COPY . .
+
+# Create Scores.txt file (with a score of 0)
+RUN echo 0 > Scores.txt
 
 # Install all dependencies
 RUN pip install --no-cache-dir -r requirements.txt
