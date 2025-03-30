@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-debug = False
+debug = True
 
 def test_scores_service(score_url):
     """Test the score service"""

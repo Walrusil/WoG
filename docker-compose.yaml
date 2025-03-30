@@ -6,5 +6,5 @@ services:
     ports:
       - "8777:5000"
     volumes:
-      - ./Scores.txt:/Scores.txt
+      - ./Scores.txt:/app/Scores.txt
     image: liransilver/wog:latest

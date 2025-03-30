@@ -19,9 +19,6 @@ COPY . .
 # Install all dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy Scores.txt to the root directory
-COPY Scores.txt /Scores.txt
-
 # Expose the port for the score service
 EXPOSE 5000
 

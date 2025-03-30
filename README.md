@@ -9,7 +9,6 @@ WorldOfGames/
 ├── CurrencyRouletteGame.py
 ├── Docker-compose.yaml 
 ├── Dockerfile 
-├── e2e.py
 ├── GuessGame.py
 ├── Jenkinsfile
 ├── Live.py
@@ -20,7 +19,9 @@ WorldOfGames/
 ├── requirements.txt
 ├── Score.py
 ├── Scores.txt
-└── Utils.py
+├── Utils.py
+└── tests/
+    └── e2e.py
 ```
 
 ## Usage
