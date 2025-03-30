@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat 'python tests\e2e.py'
+                        bat 'python tests/e2e.py'
                     } catch (Exception err) {
                         error "Tests failed: ${err}"
                     }
