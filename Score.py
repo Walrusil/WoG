@@ -24,7 +24,7 @@ class ScoreManager:
         return BAD_RETURN_CODE
 
     def get_score(self):
-        """Read the score from tghe score file, checks validity and returns a valid value"""
+        """Read the score from the score file, checks validity and returns a valid value"""
         score = self.read_score().strip()
         try:
             score = int(score)
