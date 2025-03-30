@@ -9,3 +9,4 @@ __pycache__/
 
 # Ignore score file
 Scores.txt
+agent.jar
