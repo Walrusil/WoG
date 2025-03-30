@@ -32,7 +32,7 @@ def test_scores_service(score_url):
 
 def main_function():
     """Run the test and return 0 if passed or -1 if failed"""
-    if test_scores_service("http://localhost:5000/score"): # Our score URL is in port 5000...
+    if test_scores_service("http://localhost:8777/score"): # Our score URL is in port 5000...
         if debug:
             print("Test passed!")
         return 0  # Success
