@@ -8,7 +8,8 @@ RUN apt-get update \
     && apt-get install -y ./google-chrome-stable_current_amd64.deb \
     && rm google-chrome-stable_current_amd64.deb \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && echo 0 > /app/Scores.txt
 
 # Set working directory
 WORKDIR /app
