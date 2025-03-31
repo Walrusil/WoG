@@ -21,6 +21,13 @@ pipeline {
                 }
             }
         }
+        stage('Prepare Test') {
+            steps {
+                script {
+                    bat 'echo 1 > Scores.txt'
+                }
+            }
+        }
         stage('Test') {
             steps {
                 script {
