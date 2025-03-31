@@ -24,7 +24,7 @@ pipeline {
         stage('Prepare Test') {
             steps {
                 script {
-                    bat 'echo 1 > Scores.txt'
+                    bat 'echo 1 > Scores.txt' // Prepare a valid score (between 1 and 1000)
                 }
             }
         }
@@ -32,7 +32,8 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat 'python tests/e2e.py'
+                        def scoreUrl = "http://localhost:8777/score" // The docker is exposed on port 8777
+                        bat "python tests/e2e.py ${scoreUrl}"
                     } catch (Exception err) {
                         error "Tests failed: ${err}"
                     }

@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-import time
+import sys
+# import time
 
 debug = True
 
@@ -30,9 +31,9 @@ def test_scores_service(score_url):
         driver.quit() # Close the chrom web driver
 
 
-def main_function():
+def main_function(score_url):
     """Run the test and return 0 if passed or -1 if failed"""
-    if test_scores_service("http://localhost:8777/score"): # Our score URL is in port 5000...
+    if test_scores_service(score_url): 
         if debug:
             print("Test passed!")
         return 0  # Success
@@ -44,7 +45,10 @@ def main_function():
 
 
 if __name__ == "__main__":
-    exit_code = main_function()
+    score_url = "http://localhost:5000/score"  # Default URL (on local host port 5000)
+    if len(sys.argv) > 1:
+        score_url = sys.argv[1]  # Get URL from command line argument
+    exit_code = main_function(score_url)
     if debug:
         print(f"Exit code = {exit_code}") # For debugging...
     exit(exit_code)
