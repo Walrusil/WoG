@@ -16,9 +16,6 @@ WORKDIR /app
 # Copy all application files (including requirements.txt)
 COPY . .
 
-# Create Scores.txt file (with a score of 0)
-RUN echo 0 > Scores.txt
-
 # Install all dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
