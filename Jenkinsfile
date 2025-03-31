@@ -32,8 +32,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        def scoreUrl = "http://localhost:8777/score" // The docker is exposed on port 8777
-                        bat "python tests/e2e.py ${scoreUrl}"
+                        bat "python tests/e2e.py http://localhost:8777/score" // The docker is exposed on local host port 8777
                     } catch (Exception err) {
                         error "Tests failed: ${err}"
                     }
